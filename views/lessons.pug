@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h1 #{title}
+
+    table(style='width:100%', border='1')
+      tr
+        th paraTimeId
+        th paraDate
+        th paraType
+        th Name
+        th FIO
+        th auditorName
+        th groups
+      
+      each lesson, i in lessons
+        tr
+          td= lesson.paraTimeId
+          td= lesson.paraDate
+          td= lesson.paraType
+          td= lesson.predmetName
+          td= lesson.prepodFIO
+          td= lesson.auditorName
+          td 
+            each group, i in lesson.groups
+              p= group.groupName
